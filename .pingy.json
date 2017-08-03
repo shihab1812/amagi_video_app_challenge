@@ -1,0 +1,14 @@
+{
+	"name": "amagi_video",
+	"exportDir": "dist",
+	"minify": true,
+	"compile": true,
+	"exclusions": [
+		{
+			"path": "node_modules",
+			"action": "exclude",
+			"type": "dir"
+		}
+	],
+	"port": 58553
+}
