@@ -19,7 +19,7 @@
           $scope.loadedVideoArray=[];
           $scope.videoLoading = {
               'startCounter':0,
-              'setupLimit': 400,
+              'setupLimit': 10,
               'endCounter': function(){
                   return this.setupLimit;
               }
