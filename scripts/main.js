@@ -3,3 +3,9 @@ var helloWorld = function() {
 };
 
 helloWorld();
+
+
+(function(){
+  angular.module('amagiApp',[]);
+  }
+)();
