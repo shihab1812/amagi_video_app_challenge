@@ -80,16 +80,18 @@
         <h1>{{mainVar}}</h1>
         <h2>{{videoAppenderText}}</h2>
         <!-- For looper Article-->
-          <article class="video-card-wrp col-md-4">
-            <div class="well">
-
+          <article class="video-card-wrp col-md-4" ng-repeat="aVideo in loadedVideoArray">
+            <div class="well vid-card-wrp">
+              {{aVideo}}
             </div>
          </article>
       </div>
 
-      <div class="row load-more-videos">
-        <div class="col-md-12">
-          
+      <div class="row load-more-videos clearfix" style="margin-bottom: 50px;">
+        <div class="col-md-offset-4 col-md-4 text-center">
+          <button class="btn btn-block btn-warning" ng-click="loadMoreVid()" ng-disabled="loadMoreBtn.status">
+            {{loadMoreBtn.text}}
+          </button>
         </div>
       </div>
 
