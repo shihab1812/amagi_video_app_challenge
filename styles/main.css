@@ -2,4 +2,21 @@ html,body{
   font-family: 'Roboto', sans-serif;
 }
 
-
+.video-card-wrp .vid-card{
+  background: #fff;
+  box-shadow: 0 20px 20px rgba(0,0,0,.08);
+}
+.video-card-wrp .vid-card header{
+  height: 250px;
+  background-size: contain;
+  position: relative;
+}
+.video-card-wrp .vid-card header:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: #062900;
+    opacity: 0.5;
+    left: 0px;
+}

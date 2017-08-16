@@ -19,7 +19,7 @@
   <!-- 
       Navigation Box
      -->
-  <nav class="navbar navbar-default navbar-inverse">
+  <nav class="navbar navbar-default">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -64,27 +64,56 @@
   <!--
         Main Area 
   -->
-  <section id="main-area" class="container">
+  <section id="main-area" class="container" ng-controller="videoAppenderCtrl">
     <!-- Header -->
     <header>
-      <h1 class="page-header text-uppercase">
-        ALL Videos
-      </h1>
+      <div class="row">
+        <div class="col-md-5">
+          <h1 class="page-header text-uppercase">
+            ALL Videos
+          </h1>
+        </div>
+        <div class="col-md-7">
+          <form action="" class="form-inline pull-right">
+            <div class="form-group">
+              <label for="search_inside_obj"> Search Available Videos </label>
+              <input type="text" class="form-control" ng-model="search_avail_obj">
+            </div>
+          </form>
+        </div>
+      </div>
+
+
     </header>
 
-    <section id="video-appender" ng-controller="videoAppenderCtrl">
+    <section id="video-appender">
       <div class="row">
         <div class="spinner" ng-show="loading">
           <i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i>
         </div>
-        <h1>{{mainVar}}</h1>
-        <h2>{{videoAppenderText}}</h2>
+        <!--<h1>{{mainVar}}</h1>
+        <h2>{{videoAppenderText}}</h2> -->
         <!-- For looper Article-->
-          <article class="video-card-wrp col-md-4" ng-repeat="aVideo in loadedVideoArray">
-            <div class="well vid-card-wrp">
-              {{aVideo}}
-            </div>
-         </article>
+        <article class="video-card-wrp col-md-4" ng-repeat="aVideo in loadedVideoArray | filter : search_avail_obj">
+          <div class="vid-card">
+            <header ng-style="{'background-image':'url({{aVideo.thumbnail_path}})'}">
+              some big bg image will come
+            </header>
+            <section class="vid-icon">
+
+            </section>
+            <main class="well">
+              <p class="lead">
+                {{aVideo.brand_name}}
+              </p>
+
+            </main>
+            <footer>
+
+            </footer>
+
+          </div>
+        </article>
       </div>
 
       <div class="row load-more-videos clearfix" style="margin-bottom: 50px;">
