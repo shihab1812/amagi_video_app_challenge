@@ -1,16 +1,27 @@
 html,body{
   font-family: 'Roboto', sans-serif;
 }
-
+nav#main-nav{
+    box-shadow: 0px 2px 40px 0px rgba(0,0,0,0.08);
+    /* position: fixed; */
+    padding: 9px 0;
+    background-color: rgba(255,255,255,.98);
+}
+section#main-area{
+  margin-top: 85px;
+}
 .video-card-wrp .vid-card{
   background: #fff;
   box-shadow: 0 20px 20px rgba(0,0,0,.08);
+  transition: all 0.3s ease-in-out;
 }
 .video-card-wrp .vid-card header{
   height: 250px;
   background-size: contain;
   position: relative;
+  cursor: pointer;
 }
+
 .video-card-wrp .vid-card header:after {
     position: absolute;
     content: '';
@@ -19,4 +30,23 @@ html,body{
     background: #062900;
     opacity: 0.5;
     left: 0px;
+}
+
+.video-card-wrp .vid-card header:before {
+    content: "\f144";
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    font-size: 4em;
+    top: 42%;
+    left: 44%;
+    color: #fff;
+}
+.video-card-wrp .vid-card:hover {
+    box-shadow: 0 40px 40px rgba(0,0,0,.16);
+    transform: translate(0,-20px);
+    transition-delay: 0s !important;
+    transition: all 0.3s ease-in-out;
 }

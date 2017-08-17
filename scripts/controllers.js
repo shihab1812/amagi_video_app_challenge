@@ -46,6 +46,7 @@
 
           
         $scope.videoAppenderText = "Here videos will be appended";
+
         videoRepo.getAllVideos().then(function(response){
              
                 $scope.videoRepo = response.data;
@@ -53,7 +54,7 @@
                 $scope.loadIntoVideoArray();
                 console.log($scope.loadedVideoArray);
                 $scope.loadMoreBtn.status=false;
-                   console.log(JSON.stringify(response.data));
+                  // console.log(JSON.stringify(response.data));
 
         },
         function(){
@@ -72,10 +73,17 @@
            
         
           
-              console.log($scope.loadedVideoArray);
+              //console.log($scope.loadedVideoArray);
 
                $scope.loadMoreBtn.status=false;
       
+        }
+
+        //load Video into modalbox
+        $scope.loadVideo = function(i){
+            //open modal modalbox//load video src to the object.video_path
+            console.log($scope.videoRepo[i].video_path);
+
         }
 
      }])
